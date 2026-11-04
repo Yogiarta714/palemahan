@@ -1,49 +1,75 @@
-// DRAF STRUKTUR. Ganti isi dengan artikel final setelah sumber diverifikasi.
-// Setiap angka/statistik wajib punya sumber dan tahun.
-// content adalah daftar "blok" yang nanti dirender satu per satu di halaman artikel.
+// Isian bawaan untuk artikel
+const base = {
+    draft: true,
+    image: { src: null, alt: "", credit: "" },
+    date: "2026-11-04",
+    content: [],
+    keyFacts: [],
+    tryToday: null,
+    sources: [],
+    related: [],
+};
 
 export const articles = [
     {
+        ...base,
         id: "a-sampah-1",
         slug: "contoh-memilah-sampah-dari-sumber",
-        draft: true,
         title: "[Contoh] Memilah Sampah dari Sumber",
         category: "sampah",
         summary: "[Contoh] Ringkasan satu atau dua kalimat tentang isi artikel.",
-        image: { src: null, alt: "", credit: "" },
-        readingTime: 4, // menit
-        date: "2026-11-03",
-        content: [
-            { type: "heading", text: "[Contoh] Subjudul pertama" },
-            { type: "paragraph", text: "[Contoh] Paragraf isi artikel." },
-        ],
-        keyFacts: [{ text: "[isi fakta penting]", source: "[nama sumber]", year: "[tahun]" }],
-        tryToday: {
-            title: "Pisahkan sampah organik dan anorganik hari ini",
-            description: "[Contoh] Satu tindakan kecil yang bisa langsung dicoba.",
-            challengeId: "bebas-plastik",
-        },
-        sources: [{ label: "[Nama sumber]", url: "https://example.com" }],
-        related: ["contoh-mangrove-pesisir"],
+        readingTime: 4,
+        tags: ["sampah", "pilah", "organik", "anorganik", "rumah tangga"],
     },
     {
+        ...base,
         id: "a-pesisir-1",
         slug: "contoh-mangrove-pesisir",
-        draft: true,
         title: "[Contoh] Mangrove: Benteng Hijau Pesisir",
         category: "pesisir-laut",
         summary: "[Contoh] Ringkasan satu atau dua kalimat tentang isi artikel.",
-        image: { src: null, alt: "", credit: "" },
         readingTime: 5,
-        date: "2026-11-03",
-        content: [
-            { type: "heading", text: "[Contoh] Subjudul pertama" },
-            { type: "paragraph", text: "[Contoh] Paragraf isi artikel." },
-        ],
-        keyFacts: [],
-        tryToday: null,
-        sources: [],
-        related: ["contoh-memilah-sampah-dari-sumber"],
+        tags: ["mangrove", "pesisir", "akar"],
+    },
+    {
+        ...base,
+        id: "a-iklim-1",
+        slug: "contoh-iklim-dan-subak",
+        title: "[Contoh] Perubahan Iklim dan Petani Subak",
+        category: "iklim",
+        summary: "[Contoh] Ringkasan satu atau dua kalimat tentang isi artikel.",
+        readingTime: 5,
+        tags: ["iklim", "subak", "pertanian", "cuaca"],
+    },
+    {
+        ...base,
+        id: "a-biodiversitas-1",
+        slug: "contoh-jalak-bali",
+        title: "[Contoh] Jalak Bali: Burung Endemik Pulau Dewata",
+        category: "biodiversitas",
+        summary: "[Contoh] Ringkasan satu atau dua kalimat tentang isi artikel.",
+        readingTime: 4,
+        tags: ["jalak bali", "endemik", "burung"],
+    },
+    {
+        ...base,
+        id: "a-energi-1",
+        slug: "contoh-energi-surya",
+        title: "[Contoh] Energi Surya di Pulau Dewata",
+        category: "energi",
+        summary: "[Contoh] Ringkasan satu atau dua kalimat tentang isi artikel.",
+        readingTime: 6,
+        tags: ["surya", "listrik", "energi bersih"],
+    },
+    {
+        ...base,
+        id: "a-gaya-hidup-1",
+        slug: "contoh-tanpa-plastik",
+        title: "[Contoh] Tanpa Plastik Sekali Pakai",
+        category: "gaya-hidup",
+        summary: "[Contoh] Ringkasan satu atau dua kalimat tentang isi artikel.",
+        readingTime: 4,
+        tags: ["plastik", "tumbler", "belanja"],
     },
 ];
 
