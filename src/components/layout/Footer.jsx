@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import Container from "./Container.jsx";
+import Logo from "../ui/Logo.jsx";
 
 const columns = [
     {
@@ -31,7 +32,7 @@ export default function Footer() {
         <footer className="bg-forest-800 text-ivory">
             <Container className="grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
                 <div>
-                    <p className="font-display text-3xl font-semibold">Palemahan</p>
+                    <Logo tone="dark" size="lg" />
                     <p className="mt-3 max-w-xs text-sm leading-relaxed text-sage-200">
                         Edukasi lingkungan dari Bali. Learn Today, Protect Tomorrow.
                     </p>

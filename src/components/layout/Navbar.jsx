@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router";
 import { Menu, X } from "lucide-react";
 import Container from "./Container.jsx";
 import Button from "../ui/Button.jsx";
+import Logo from "../ui/Logo.jsx";
 
 const links = [
     { to: "/jelajahi", label: "Jelajahi" },
@@ -50,11 +51,8 @@ export default function Navbar() {
         <>
             <header className="sticky top-0 z-40 border-b border-line bg-ivory/90 backdrop-blur">
                 <Container className="flex h-16 items-center justify-between">
-                    <Link
-                        to="/"
-                        className="font-display text-2xl font-semibold tracking-tight text-forest-700"
-                    >
-                        Palemahan
+                    <Link to="/" className="inline-flex">
+                        <Logo />
                     </Link>
 
                     {/* Navigasi desktop */}
@@ -90,9 +88,7 @@ export default function Navbar() {
                     className="fixed inset-0 z-50 flex flex-col bg-ivory lg:hidden"
                 >
                     <Container className="flex h-16 shrink-0 items-center justify-between border-b border-line">
-                        <span className="font-display text-2xl font-semibold text-forest-700">
-                            Palemahan
-                        </span>
+                        <Logo />
                         <button
                             ref={closeButtonRef}
                             type="button"
