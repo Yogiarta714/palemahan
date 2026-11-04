@@ -12,7 +12,7 @@ export function createDefaultProgress() {
 const isPlainObject = (value) =>
     typeof value === "object" && value !== null && !Array.isArray(value);
 
-// Memastikan data dari localStorage bentuknya benar. Kalau rusak, pakai nilai awal.
+// Memastikan data dari localStorage bentuknya benar
 function normalize(raw) {
     const base = createDefaultProgress();
     if (!isPlainObject(raw)) return base;
@@ -29,7 +29,7 @@ export function loadProgress() {
         const raw = window.localStorage.getItem(STORAGE_KEY);
         return normalize(raw ? JSON.parse(raw) : null);
     } catch {
-        // Mode privat, penyimpanan diblokir, atau JSON rusak: mulai dari nol, jangan crash.
+        // Mode privat, penyimpanan diblokir, atau JSON rusak
         return createDefaultProgress();
     }
 }
@@ -38,6 +38,6 @@ export function saveProgress(progress) {
     try {
         window.localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
     } catch {
-        // Penyimpanan penuh atau diblokir: abaikan, aplikasi tetap berjalan.
+        // Penyimpanan penuh atau diblokir
     }
 }
