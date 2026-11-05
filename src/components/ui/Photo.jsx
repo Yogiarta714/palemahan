@@ -1,13 +1,14 @@
 import ContourPattern from "./ContourPattern.jsx";
 
-export default function Photo({ image, seed = 1, className = "" }) {
+export default function Photo({ image, seed = 1, priority = false, className = "" }) {
     return (
         <div className={`relative overflow-hidden bg-sage-100 ${className}`}>
             {image?.src ? (
                 <img
                     src={image.src}
                     alt={image.alt}
-                    loading="lazy"
+                    loading={priority ? "eager" : "lazy"}
+                    fetchPriority={priority ? "high" : undefined}
                     decoding="async"
                     className="h-full w-full object-cover"
                 />
