@@ -23,8 +23,6 @@ const formatDate = (iso) =>
         year: "numeric",
     });
 
-// Artikel terkait: utamakan yang ditulis di data (related), lalu isi sisanya
-// dengan artikel sekategori, lalu artikel lain, sampai maksimal 3.
 function pickRelated(article) {
     const chosen = (article.related ?? []).map(getArticleBySlug).filter(Boolean);
     const used = new Set([article.id, ...chosen.map((item) => item.id)]);
