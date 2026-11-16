@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 
 const base =
-    "inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold transition-colors duration-150 disabled:pointer-events-none disabled:opacity-50";
+    "inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold transition duration-150 hover:-translate-y-0.5 hover:shadow-sm active:translate-y-0 active:scale-97 disabled:pointer-events-none disabled:opacity-50 motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:active:scale-100";
 
 const variants = {
     primary: "bg-forest-600 text-white hover:bg-forest-700",

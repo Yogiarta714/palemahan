@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { ProgressContext } from "./progressContext.js";
 import { createDefaultProgress, loadProgress, saveProgress } from "../lib/storage.js";
+import { todayKey } from "../lib/streak.js";
 
 const CHALLENGE_LENGTH = 7;
 
@@ -40,6 +41,7 @@ export default function ProgressProvider({ children }) {
                 [challengeId]: {
                     startedAt: new Date().toISOString(),
                     completedDays: [],
+                    dates: {},
                     completedAt: null,
                 },
             },
@@ -59,6 +61,7 @@ export default function ProgressProvider({ children }) {
                     [challengeId]: {
                         ...current,
                         completedDays: [...current.completedDays, day],
+                        dates: { ...(current.dates ?? {}), [day]: todayKey() },
                         completedAt: day === CHALLENGE_LENGTH ? new Date().toISOString() : null,
                     },
                 },

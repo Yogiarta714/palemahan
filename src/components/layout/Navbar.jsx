@@ -13,11 +13,12 @@ const links = [
     { to: "/tentang", label: "Tentang" },
 ];
 
+// Garis bawah tipis yang "tumbuh" dari kiri saat disorot, dan tetap penuh di halaman aktif.
 const desktopLinkClass = ({ isActive }) =>
-    `text-sm font-medium transition-colors hover:text-forest-600 ${
+    `relative py-1 text-sm font-medium transition-colors hover:text-forest-600 after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:origin-left after:rounded-full after:bg-clay-500 after:transition-transform after:duration-200 motion-reduce:after:transition-none ${
         isActive
-            ? "text-forest-600 underline decoration-clay-500 decoration-2 underline-offset-8"
-            : "text-ink-muted"
+            ? "text-forest-600 after:scale-x-100"
+            : "text-ink-muted after:scale-x-0 hover:after:scale-x-100"
     }`;
 
 const mobileLinkClass = ({ isActive }) =>
@@ -25,10 +26,20 @@ const mobileLinkClass = ({ isActive }) =>
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
     const menuButtonRef = useRef(null);
     const closeButtonRef = useRef(null);
     const close = () => setOpen(false);
 
+    // Header mendapat bayangan tipis begitu halaman mulai digulir, sebagai petunjuk kedalaman.
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 8);
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
+    // Saat menu mobile terbuka: fokus ke tombol tutup, Escape menutup,
+    // halaman di belakang tidak bisa di-scroll. Saat ditutup: semua dikembalikan.
     useEffect(() => {
         if (!open) return;
         const menuButton = menuButtonRef.current;
@@ -49,7 +60,11 @@ export default function Navbar() {
 
     return (
         <>
-            <header className="sticky top-0 z-40 border-b border-line bg-ivory/90 backdrop-blur">
+            <header
+                className={`sticky top-0 z-40 border-b border-line bg-ivory/90 backdrop-blur transition-shadow duration-200 motion-reduce:transition-none ${
+                    scrolled ? "shadow-sm" : ""
+                }`}
+            >
                 <Container className="flex h-16 items-center justify-between">
                     <Link to="/" className="inline-flex">
                         <Logo />
@@ -72,20 +87,20 @@ export default function Navbar() {
                         aria-label="Buka menu"
                         aria-expanded={open}
                         onClick={() => setOpen(true)}
-                        className="inline-flex size-11 items-center justify-center rounded-full text-forest-700 hover:bg-forest-50 lg:hidden"
+                        className="inline-flex size-11 items-center justify-center rounded-full text-forest-700 transition hover:bg-forest-50 active:scale-90 motion-reduce:active:scale-100 lg:hidden"
                     >
                         <Menu aria-hidden="true" />
                     </button>
                 </Container>
             </header>
 
-            {/* Menu mobile layar penuh */}
+            {/* Menu mobile layar penuh, sengaja di LUAR <header> (backdrop-blur membuat elemen fixed di dalamnya ikut terpotong) */}
             {open && (
                 <div
                     role="dialog"
                     aria-modal="true"
                     aria-label="Menu navigasi"
-                    className="fixed inset-0 z-50 flex flex-col bg-ivory lg:hidden"
+                    className="fixed inset-0 z-50 flex animate-rise flex-col bg-ivory motion-reduce:animate-none lg:hidden"
                 >
                     <Container className="flex h-16 shrink-0 items-center justify-between border-b border-line">
                         <Logo />
@@ -94,7 +109,7 @@ export default function Navbar() {
                             type="button"
                             aria-label="Tutup menu"
                             onClick={close}
-                            className="inline-flex size-11 items-center justify-center rounded-full text-forest-700 hover:bg-forest-50"
+                            className="inline-flex size-11 items-center justify-center rounded-full text-forest-700 transition hover:bg-forest-50 active:scale-90 motion-reduce:active:scale-100"
                         >
                             <X aria-hidden="true" />
                         </button>

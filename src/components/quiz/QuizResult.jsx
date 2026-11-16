@@ -161,7 +161,7 @@ export default function QuizResult({
                         {challenge.title}
                     </p>
                     <p className="mt-2 text-ink-muted">{challenge.description}</p>
-                    <ArrowLink to="/aksi" className="mt-3">
+                    <ArrowLink to={`/aksi?tantangan=${challenge.id}`} className="mt-3">
                         Lihat tantangan di Eco Action
                     </ArrowLink>
                 </section>

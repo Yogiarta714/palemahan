@@ -2,12 +2,14 @@ import { useEffect } from "react";
 import { useLocation } from "react-router";
 
 export default function ScrollToTop() {
-    const { pathname } = useLocation();
+    const { pathname, hash } = useLocation();
 
     useEffect(() => {
-        // instant agar tidak ikut animasi smooth-scroll dari CSS
+        
+        if (hash) return;
+        // 'instant'
         window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-    }, [pathname]);
+    }, [pathname, hash]);
 
     return null;
 }

@@ -4,8 +4,8 @@ const letters = ["A", "B", "C", "D"];
 
 const styles = {
     idle: "border-line bg-ivory hover:border-forest-400 hover:bg-forest-50", // belum dijawab
-    correct: "border-forest-600 bg-forest-50", // jawaban benar
-    wrong: "border-clay-600 bg-clay-100", // jawaban salah
+    correct: "animate-pop border-forest-600 bg-forest-50 motion-reduce:animate-none", // jawaban benar
+    wrong: "animate-shake border-clay-600 bg-clay-100 motion-reduce:animate-none", // jawaban salah
     reveal: "border-forest-600 bg-forest-50", // jawaban yang benar saat salah
     dim: "border-line bg-ivory opacity-60", // pilihan lain setelah jawab
 };
