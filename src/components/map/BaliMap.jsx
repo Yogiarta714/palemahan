@@ -1,9 +1,21 @@
 import { Check } from "lucide-react";
 import { baliMap, toPercent } from "../../data/baliMap.js";
 
+// Label di kanan titik. Titik di sisi timur: label di kiri, atau di bawah bila titik berada di tenggara
+function labelSide(x, y) {
+    if (x <= 60) return "right";
+    return y > 70 ? "bottom" : "left";
+}
+
+const labelPosition = {
+    right: "left-full top-1/2 ml-1 -translate-y-1/2",
+    left: "right-full top-1/2 mr-1 -translate-y-1/2",
+    bottom: "left-1/2 top-full -translate-x-1/2",
+};
+
 function Pin({ spot, selected, visited, onSelect }) {
     const { x, y } = toPercent(spot.coordinates.lat, spot.coordinates.lng);
-    const side = x > 60 ? "left" : "right";
+    const side = labelSide(x, y);
 
     return (
         <button
@@ -26,17 +38,17 @@ function Pin({ spot, selected, visited, onSelect }) {
                     selected
                         ? "size-7 bg-forest-800"
                         : visited
-                            ? "size-5 bg-forest-600"
-                            : "size-5 bg-clay-500"
+                          ? "size-5 bg-forest-600"
+                          : "size-5 bg-clay-500"
                 }`}
             >
                 {(visited || selected) && <Check className="size-3 text-white" />}
             </span>
             <span
                 aria-hidden="true"
-                className={`pointer-events-none absolute top-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-ivory/95 px-3 py-1 text-xs font-semibold text-forest-800 shadow-sm ${
-                    side === "left" ? "right-full mr-1" : "left-full ml-1"
-                } ${selected ? "block" : "hidden lg:block"}`}
+                className={`pointer-events-none absolute whitespace-nowrap rounded-full bg-ivory/95 px-3 py-1 text-xs font-semibold text-forest-800 shadow-sm ${labelPosition[side]} ${
+                    selected ? "block" : "hidden lg:block"
+                }`}
             >
                 {spot.name}
             </span>
@@ -73,7 +85,7 @@ export default function BaliMap({
 
     return (
         <div
-            className="relative w-full rounded-xl bg-sage-100"
+            className="relative w-full rounded-xl border border-line bg-sage-100"
             style={{ aspectRatio: `${baliMap.width} / ${baliMap.height}` }}
         >
             <svg
@@ -102,6 +114,43 @@ export default function BaliMap({
                     {baliMap.inner.map((d) => (
                         <path key={d} d={d} vectorEffect="non-scaling-stroke" />
                     ))}
+                </g>
+
+                {/* Penunjuk arah dan nama perairan (hiasan). Nama perairan disembunyikan di layar kecil. */}
+                <g aria-hidden="true" className="max-md:hidden">
+                    <text
+                        x="960"
+                        y="60"
+                        textAnchor="end"
+                        fontSize="20"
+                        fontStyle="italic"
+                        letterSpacing="3"
+                        className="fill-forest-300"
+                    >
+                        LAUT BALI
+                    </text>
+                    <text
+                        x="140"
+                        y="596"
+                        fontSize="20"
+                        fontStyle="italic"
+                        letterSpacing="3"
+                        className="fill-forest-300"
+                    >
+                        SAMUDRA HINDIA
+                    </text>
+                </g>
+                <g aria-hidden="true" transform="translate(80 560)">
+                    <path d="M0 -30 L10 8 L0 0 L-10 8Z" className="fill-forest-600" />
+                    <text
+                        y="34"
+                        textAnchor="middle"
+                        fontSize="20"
+                        fontWeight="600"
+                        className="fill-forest-600"
+                    >
+                        U
+                    </text>
                 </g>
             </svg>
 
@@ -136,6 +185,12 @@ export default function BaliMap({
                             {southern.length}
                         </span>
                     </button>
+                    <span
+                        aria-hidden="true"
+                        className="pointer-events-none absolute left-full top-1/2 ml-0.5 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-ivory/95 px-3 py-1 text-xs font-semibold text-forest-800 shadow-sm lg:block"
+                    >
+                        Bali selatan
+                    </span>
 
                     {clusterOpen && (
                         <ul

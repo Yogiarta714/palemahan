@@ -1,15 +1,15 @@
-import mangroveRoots from "../assets/images/artikel-mangrove-akar.webp";
-import subak from "../assets/images/Subak.jpg";
-import imgMemilahSampah from "../assets/images/imgMemilahSampah.jpg";
-import imgJalakBali from "../assets/images/imgJalakBali.jpg";
-import imgEnergiSurya from "../assets/images/imgEnergiSurya.png";
-import imgTanpaPlastik from "../assets/images/imgTanpaPlastik.jpg";
-import imgHutanBaliBarat from "../assets/images/imgHutanBaliBarat.jpg";
-import imgTerumbuKarang from "../assets/images/imgTerumbuKarang.jpg";
+import mangroveRoots from "../assets/images/imgMangrove.webp";
+import subak from "../assets/images/Subak.webp";
+import imgMemilahSampah from "../assets/images/imgMemilahSampah.webp";
+import imgJalakBali from "../assets/images/imgJalakBali.webp";
+import imgEnergiSurya from "../assets/images/imgEnergiSurya.webp";
+import imgTanpaPlastik from "../assets/images/imgTanpaPlastik.webp";
+import imgHutanBaliBarat from "../assets/images/imgHutanBaliBarat.webp";
+import imgTerumbuKarang from "../assets/images/imgTerumbuKarang.webp";
 import imgBauranEnergi from "../assets/images/imgBauranEnergi.webp";
-import imgBelanjaPasar from "../assets/images/imgBelanjaPasar.jpg";
-import imgTpaSuwung from "../assets/images/imgTpaSuwung.jpg";
-import imgNaikSatuDerajat from "../assets/images/imgNaikSatuDerajat.jpg";
+import imgBelanjaPasar from "../assets/images/imgBelanjaPasar.webp";
+import imgTpaSuwung from "../assets/images/imgTpaSuwung.webp";
+import imgNaikSatuDerajat from "../assets/images/imgNaikSatuDerajat.webp";
 
 // Isian bawaan untuk artikel
 const base = {
@@ -34,13 +34,13 @@ export const articles = [
         summary:
         "Hutan bakau di selatan Bali menahan gelombang dan menjadi rumah bagi puluhan jenis mangrove. Tapi karena berada di hilir sungai, ia juga menerima kiriman sampah plastik.",
         image: {
-        src: mangroveRoots,
-        alt: "Akar penyangga pohon mangrove yang menjuntai ke air gelap, dengan daun hijau di sisi kanan",
-        width: 1400,
-        height: 933,
-        caption:
-            "Akar penyangga mangrove di Florida Keys, Amerika Serikat. Foto ilustrasi, bukan dari Bali",
-        credit: "Foto: Florida-Guidebook.com / Unsplash",
+            src: mangroveRoots,
+            alt: "Akar penyangga pohon mangrove yang menjuntai ke air gelap, dengan daun hijau di sisi kanan",
+            width: 1400,
+            height: 933,
+            caption:
+                "Akar penyangga mangrove di Florida Keys, Amerika Serikat. Foto ilustrasi, bukan dari Bali",
+            credit: "Foto: Florida-Guidebook.com / Unsplash",
         },
         readingTime: 3,
         tags: [
@@ -1409,12 +1409,12 @@ export const articles = [
         summary:
         "Sampah dari rumah banyak berakhir di TPA Suwung. Status TPA ini sering berubah, jadi penting memahami istilah dan tanggalnya.",
         image: {
-        src: imgTpaSuwung,
-        alt: "Antrean truk pengangkut sampah di TPA Suwung, Denpasar",
-        width: 1200,
-        height: 800,
-        caption: "Antrean truk pengangkut sampah di TPA Suwung, Denpasar",
-        credit: "Foto: Ni Ketut Sudiani / KOMPAS.com",
+            src: imgTpaSuwung,
+            alt: "Antrean truk pengangkut sampah di TPA Suwung, Denpasar",
+            width: 1200,
+            height: 800,
+            caption: "Antrean truk pengangkut sampah di TPA Suwung, Denpasar",
+            credit: "Foto: Ni Ketut Sudiani / KOMPAS.com",
         },
         date: "2026-11-17",
         readingTime: 4,
