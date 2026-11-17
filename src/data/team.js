@@ -2,14 +2,14 @@
 export const team = [
     {
         name: "I Kadek Yogiarta Adi Winata",
-        role: "Pengembang dan Perancang"
+        role: "Pengembang dan Perancang",
     },
     {
-        name: "I Kadek Yogiarta Adi Winata",
-        role: "Pengembang dan Perancang"
+        name: "Dewa Made Pradnyana Kusuma",
+        role: "Pengembang",
     },
     {
-        name: "I Kadek Yogiarta Adi Winata",
-        role: "Pengembang dan Perancang"
+        name: "	I Putu Gede Oka Adyuta",
+        role: "Pengembang",
     },
 ];

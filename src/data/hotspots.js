@@ -18,7 +18,6 @@ export const hotspots = [
         area: "selatan",
         coordinates: { lat: -8.72, lng: 115.214 },
         volatile: true,
-        statusAsOf: "2026-11-07",
         summary:
             "Tempat pemrosesan akhir sampah di Denpasar Selatan, berdekatan dengan hutan mangrove di tepi Teluk Benoa.",
         facts: [
