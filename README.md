@@ -219,7 +219,7 @@ Data dan statistik dalam artikel dikutip dari sumber primer atau media tepercaya
 |---|---|
 | I Kadek Yogiarta Adi Winata | Pengembang dan perancang |
 | Dewa Made Pradnyana Kusuma | Riset sumber, kurasi foto |
-| I Putu Gede Oka Adyuta | [Riset sumber, kuis, dan pengujian] |
+| I Putu Gede Oka Adyuta | Riset sumber, kuis, dan pengujian |
 
 ## Lisensi dan Hak Cipta
 
