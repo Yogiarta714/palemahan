@@ -217,8 +217,9 @@ Data dan statistik dalam artikel dikutip dari sumber primer atau media tepercaya
 
 | Nama | Peran |
 |---|---|
-| I Kadek Yogiarta Adi Winata | Pengembang |
-| [NAMA ANGGOTA 2] | [Riset sumber, kurasi foto, kuis, dan pengujian] |
+| I Kadek Yogiarta Adi Winata | Pengembang dan perancang |
+| Dewa Made Pradnyana Kusuma | Riset sumber, kurasi foto |
+| I Putu Gede Oka Adyuta | [Riset sumber, kuis, dan pengujian] |
 
 ## Lisensi dan Hak Cipta
 
