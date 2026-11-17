@@ -1,7 +1,12 @@
-// 6 titik Peta Eco Bali
+import imgTpaSuwung from "../assets/images/TpaSuwung.webp";
+import imgPantaiKuta from "../assets/images/imgWisataPantaiKuta.webp";
+import imgMangroveNGurahRai from "../assets/images/imgMangroveNgurahRai.webp";
+import imgTerumbuKarang from "../assets/images/imgTerumbuKarang.webp";
+import imgSubakJatiluwih from "../assets/images/imgSubakJatiluwih.webp";
+import imgTamanNasional from "../assets/images/imgTamanNasional.webp";
 
 const base = {
-    image: null, // { src, alt, credit } kalau ada foto
+    image: null,
     articleSlug: null,
     area: null,
     volatile: false,
@@ -18,6 +23,14 @@ export const hotspots = [
         area: "selatan",
         coordinates: { lat: -8.72, lng: 115.214 },
         volatile: true,
+        image: {
+            src: imgTpaSuwung,
+            alt: "TPA Suwung di Denpasar",
+            caption: "Foto dokumentasi dari pemberitaan ANTARA Bali, bukan kondisi terkini.",
+            credit: "Foto: ANTARA Bali",
+            creditUrl:
+                "https://bali.antaranews.com/berita/297917/pemkot-denpasar-tpa-suwung-tutup-dalam-rangka-g20",
+        },
         summary:
             "Tempat pemrosesan akhir sampah di Denpasar Selatan, berdekatan dengan hutan mangrove di tepi Teluk Benoa.",
         facts: [
@@ -51,6 +64,12 @@ export const hotspots = [
         category: "pesisir-laut",
         area: "selatan",
         coordinates: { lat: -8.7184, lng: 115.1686 },
+        image: {
+            src: imgPantaiKuta,
+            alt: "Pantai Kuta di Badung, Bali",
+            credit: "Foto: cinchy.life",
+            creditUrl: "https://cinchy.life/id/blog/wisata-pantai-kuta-bali",
+        },
         summary:
             "Pantai di pesisir barat Bali selatan yang kerap menerima sampah kiriman pada musim tertentu.",
         facts: [
@@ -74,6 +93,13 @@ export const hotspots = [
         category: "pesisir-laut",
         area: "selatan",
         coordinates: { lat: -8.765, lng: 115.2 },
+        image: {
+            src: imgMangroveNGurahRai,
+            alt: "Hutan mangrove Tahura Ngurah Rai di Bali selatan",
+            credit: "Foto: Tribrata News (Polri)",
+            creditUrl:
+                "https://tribratanews.polri.go.id/article/tahura-mangrove-ngurah-rai-keberhasilan-restorasi-berkelanjutan-indonesia-74165",
+        },
         articleSlug: "contoh-mangrove-pesisir",
         summary:
             "Satu-satunya taman hutan raya di Bali: hutan bakau di antara Denpasar dan Badung yang menjadi benteng alami pesisir selatan.",
@@ -102,6 +128,16 @@ export const hotspots = [
         regency: "Klungkung",
         category: "pesisir-laut",
         coordinates: { lat: -8.73, lng: 115.53 },
+        image: {
+            src: imgTerumbuKarang,
+            alt: "Terumbu karang di perairan Bali",
+            // Sumber fotonya artikel transplantasi karang di Nusa Dua Coral Garden, bukan Nusa Penida. Jangan dihapus bila fotonya tidak diganti.
+            caption:
+                "Transplantasi karang di Nusa Dua, Badung. Foto ilustrasi, bukan dari Nusa Penida.",
+            credit: "Foto: Mongabay Indonesia",
+            creditUrl:
+                "https://mongabay.co.id/2020/04/11/indahnya-transplantasi-karang-di-nusa-dua-coral-garden/",
+        },
         summary:
             "Perairan di sekitar Nusa Penida, Nusa Lembongan, dan Nusa Ceningan: kawasan konservasi dengan terumbu karang dan kehidupan laut yang kaya.",
         facts: [
@@ -129,6 +165,13 @@ export const hotspots = [
         regency: "Tabanan",
         category: "iklim",
         coordinates: { lat: -8.3708, lng: 115.1319 },
+        image: {
+            src: imgSubakJatiluwih,
+            alt: "Sawah berundak Subak Jatiluwih di Tabanan",
+            credit: "Foto: Superlive",
+            creditUrl:
+                "https://superlive.id/superadventure/artikel/wilderness/melihat-dari-dekat-pesona-subak-jatiluwih",
+        },
         summary:
             "Hamparan sawah berundak di Tabanan yang menjadi bagian dari sistem subak, warisan budaya dunia.",
         facts: [
@@ -151,6 +194,13 @@ export const hotspots = [
         regency: "Jembrana dan Buleleng",
         category: "biodiversitas",
         coordinates: { lat: -8.17, lng: 114.52 },
+        image: {
+            src: imgTamanNasional,
+            alt: "Kawasan Taman Nasional Bali Barat",
+            credit: "Foto: Bali Wisataku (blog)",
+            creditUrl:
+                "https://baliwisataku.blogspot.com/2011/08/taman-nasional-bali-baratwest-bali.html",
+        },
         summary:
             "Satu-satunya taman nasional di Pulau Bali, tempat Jalak Bali, burung endemik Bali, dilepasliarkan.",
         facts: [
