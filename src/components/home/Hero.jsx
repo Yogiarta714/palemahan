@@ -3,14 +3,18 @@ import Button from "../ui/Button.jsx";
 import Reveal from "../ui/Reveal.jsx";
 import ContourPattern from "../ui/ContourPattern.jsx";
 import HeroVisual from "./HeroVisual.jsx";
+import heroPhoto from "../../assets/images/hero-beranda.jpg";
 
-// Foto hero belum final. Kalau sudah ada, ganti null dengan objek seperti ini:
-//   import heroPhoto from '../../assets/images/hero-beranda.webp'
-//   const heroImage = {
-//     src: heroPhoto, alt: 'Deskripsi foto', width: 1200, height: 1500,
-//     caption: 'Keterangan jujur (lokasi sebenarnya)', credit: 'Foto: Nama / Unsplash',
-//   }
-const heroImage = null;
+const heroImage = {
+    src: heroPhoto,
+    alt: "Sawah Jatiluwih di Bali yang masuk dalam Warisan Budaya Dunia",
+    width: 1200,
+    height: 1500,
+    caption: "Sawah Jatiluwih di Bali yang masuk dalam Warisan Budaya Dunia",
+    credit: "Foto: Travel Kompas",
+    creditUrl:
+        "https://travel.kompas.com/read/2023/06/24/073100027/kombinasi-pertanian-dan-pariwisata-jadi-keunggulan-tabanan-di-bali",
+};
 
 export default function Hero() {
     return (
