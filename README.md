@@ -84,7 +84,7 @@ Versi tiap paket tercatat di `package.json`.
 
 ```bash
 # 1. Klon repositori
-git clone [URL-REPOSITORI]
+git clone https://github.com/Yogiarta714/palemahan.git
 cd palemahan
 
 # 2. Pasang dependensi
