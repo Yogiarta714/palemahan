@@ -1,8 +1,8 @@
 import { categories } from "../../data/categories.js";
 
-const options = [{ id: "semua", short: "Semua" }, ...categories];
+const allOptions = [{ id: "semua", short: "Semua" }, ...categories];
 
-export default function CategoryChips({ value, onChange }) {
+export default function CategoryChips({ value, onChange, options = allOptions }) {
     return (
         <div className="relative after:pointer-events-none after:absolute after:inset-y-0 after:-right-5 after:w-12 after:bg-linear-to-l after:from-ivory after:to-transparent sm:after:hidden">
             <div
@@ -18,7 +18,7 @@ export default function CategoryChips({ value, onChange }) {
                             type="button"
                             aria-pressed={active}
                             onClick={() => onChange(option.id)}
-                            className={`inline-flex min-h-10 shrink-0 items-center rounded-full border px-4 text-sm font-medium transition-colors ${
+                            className={`inline-flex min-h-10 shrink-0 items-center rounded-full border px-4 text-sm font-medium transition duration-150 active:scale-95 motion-reduce:active:scale-100 ${
                                 active
                                     ? "border-forest-600 bg-forest-600 text-white"
                                     : "border-line bg-ivory text-ink hover:border-forest-400 hover:bg-forest-50"

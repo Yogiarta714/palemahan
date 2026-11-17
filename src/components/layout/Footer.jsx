@@ -22,6 +22,7 @@ const columns = [
         title: "Palemahan",
         items: [
             { to: "/tentang", label: "Tentang" },
+            { to: "/tentang#sumber", label: "Sumber dan kredit" },
             { to: "/kontak", label: "Kontak" },
         ],
     },

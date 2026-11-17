@@ -50,7 +50,7 @@ export default function TryTodayBox({ tryToday }) {
                             />
                             Tantangan “{challenge.title}” sudah kamu mulai.
                         </p>
-                        <ArrowLink to="/aksi" className="mt-3">
+                        <ArrowLink to={`/aksi?tantangan=${challenge.id}`} className="mt-3">
                             Lanjutkan di Eco Action
                         </ArrowLink>
                     </div>
