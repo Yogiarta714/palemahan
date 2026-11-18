@@ -9,6 +9,8 @@ Platform edukasi lingkungan berbahasa Indonesia dari Bali, untuk belajar, menguj
 Karya untuk **Techno Versary Vol. II, Web Design Competition**
 Tema: *EcoDigital For Environment* · Subtema: **Edukasi Lingkungan**
 
+Letsgo_Universitas Udayana_WebDesignTechnoversary_vol_II
+
 ---
 
 ## Daftar Isi
