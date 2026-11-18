@@ -3,7 +3,7 @@ import Button from "../ui/Button.jsx";
 import Reveal from "../ui/Reveal.jsx";
 import ContourPattern from "../ui/ContourPattern.jsx";
 import HeroVisual from "./HeroVisual.jsx";
-import heroPhoto from "../../assets/images/hero-beranda.jpg";
+import heroPhoto from "../../assets/images/hero-beranda.webp";
 
 const heroImage = {
     src: heroPhoto,
